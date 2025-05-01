@@ -15,16 +15,17 @@ public class AlunoService {
         this.repository = repository;
     }
 
-    public List<Aluno> ListarTodos(){
+    public List<Aluno> ListaDeTodosAlunos(){
         return repository.findAll();
     }
-public Aluno salvar (Aluno aluno) {
+public Aluno salvarNovoAluno (Aluno aluno) {
         return repository.save(aluno);
 }
-public void deletar (Long id){
-        repository.deleteAllById(id);
+public void excluirAluno (Long id){
+        repository.deleteById(id);
 }
 public Aluno buscarPorId (Long id){
         return repository.findById(id).orElse(null);
+
     }
 }
